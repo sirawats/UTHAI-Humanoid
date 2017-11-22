@@ -205,4 +205,4 @@ class DH2URDF(object):
 
 
 if __name__ == '__main__':
-    DH2URDF('myRobot', 'uthai_utils/DH2URDF/dh_param_file.ldh')
+    DH2URDF('myRobot', 'uthai_utils/DH2URDF/dh_param_file_uthai.ldh')
