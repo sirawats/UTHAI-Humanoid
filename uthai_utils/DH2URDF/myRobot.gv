@@ -1,0 +1,152 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"fd_base_link" [label="fd_base_link"];
+"f_0" [label="f_0"];
+"fd_0" [label="fd_0"];
+"f_1" [label="f_1"];
+"fd_1" [label="fd_1"];
+"f_2" [label="f_2"];
+"fd_2" [label="fd_2"];
+"f_3" [label="f_3"];
+"fd_3" [label="fd_3"];
+"f_4" [label="f_4"];
+"fd_4" [label="fd_4"];
+"f_5" [label="f_5"];
+"fd_5" [label="fd_5"];
+"f_6" [label="f_6"];
+"fd_6" [label="fd_6"];
+"f_7" [label="f_7"];
+"fd_7" [label="fd_7"];
+"f_10" [label="f_10"];
+"fd_10" [label="fd_10"];
+"f_11" [label="f_11"];
+"fd_11" [label="fd_11"];
+"f_12" [label="f_12"];
+"fd_12" [label="fd_12"];
+"f_13" [label="f_13"];
+"fd_13" [label="fd_13"];
+"f_14" [label="f_14"];
+"fd_14" [label="fd_14"];
+"f_15" [label="f_15"];
+"fd_15" [label="fd_15"];
+"f_16" [label="f_16"];
+"fd_16" [label="fd_16"];
+"f_17" [label="f_17"];
+"fd_17" [label="fd_17"];
+"f_20" [label="f_20"];
+"fd_20" [label="fd_20"];
+"f_21" [label="f_21"];
+"fd_21" [label="fd_21"];
+"f_22" [label="f_22"];
+"fd_22" [label="fd_22"];
+"f_23" [label="f_23"];
+"fd_23" [label="fd_23"];
+"f_30" [label="f_30"];
+"fd_30" [label="fd_30"];
+"f_31" [label="f_31"];
+"fd_31" [label="fd_31"];
+"f_32" [label="f_32"];
+"fd_32" [label="fd_32"];
+"f_33" [label="f_33"];
+"fd_33" [label="fd_33"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "fixed_fd" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"fixed_fd" -> "fd_base_link"
+"fd_base_link" -> "jd_0" [label="xyz: 5.51091e-18 -0.09 -0.055 \nrpy: 0 -0 -1.5708"]
+"jd_0" -> "f_0"
+"f_0" -> "j_1" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_1" -> "fd_0"
+"fd_0" -> "jd_1" [label="xyz: 0 0 -0.04 \nrpy: -1.5708 -0 1.5708"]
+"jd_1" -> "f_1"
+"f_1" -> "j_2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_2" -> "fd_1"
+"fd_1" -> "jd_2" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 1.5708"]
+"jd_2" -> "f_2"
+"f_2" -> "j_3" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_3" -> "fd_2"
+"fd_2" -> "jd_3" [label="xyz: 0.3 0 0 \nrpy: -1.5708 -0 0"]
+"jd_3" -> "f_3"
+"f_3" -> "j_4" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_4" -> "fd_3"
+"fd_3" -> "jd_4" [label="xyz: 0.315 0 0 \nrpy: 0 -0 0"]
+"jd_4" -> "f_4"
+"f_4" -> "j_5" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_5" -> "fd_4"
+"fd_4" -> "jd_5" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"jd_5" -> "f_5"
+"f_5" -> "j_6" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_6" -> "fd_5"
+"fd_5" -> "jd_6" [label="xyz: 0.045 0 0 \nrpy: -1.5708 -0 0"]
+"jd_6" -> "f_6"
+"f_6" -> "jf_1" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_1" -> "fd_6"
+"fd_6" -> "jd_7" [label="xyz: 3.55148e-18 -0.058 0 \nrpy: 1.5708 -0 -1.5708"]
+"jd_7" -> "f_7"
+"f_7" -> "jf_2" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_2" -> "fd_7"
+"fd_base_link" -> "jd_10" [label="xyz: 5.51091e-18 0.09 -0.055 \nrpy: 0 -0 1.5708"]
+"jd_10" -> "f_10"
+"f_10" -> "j_7" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_7" -> "fd_10"
+"fd_10" -> "jd_11" [label="xyz: 0 -0 -0.04 \nrpy: -1.5708 -0 -1.5708"]
+"jd_11" -> "f_11"
+"f_11" -> "j_8" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_8" -> "fd_11"
+"fd_11" -> "jd_12" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 1.5708"]
+"jd_12" -> "f_12"
+"f_12" -> "j_9" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_9" -> "fd_12"
+"fd_12" -> "jd_13" [label="xyz: 0.3 0 0 \nrpy: -1.5708 -0 0"]
+"jd_13" -> "f_13"
+"f_13" -> "j_10" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_10" -> "fd_13"
+"fd_13" -> "jd_14" [label="xyz: 0.315 0 0 \nrpy: 0 -0 0"]
+"jd_14" -> "f_14"
+"f_14" -> "j_11" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_11" -> "fd_14"
+"fd_14" -> "jd_15" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"jd_15" -> "f_15"
+"f_15" -> "j_12" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_12" -> "fd_15"
+"fd_15" -> "jd_16" [label="xyz: 0.045 0 0 \nrpy: -1.5708 -0 0"]
+"jd_16" -> "f_16"
+"f_16" -> "jf_3" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_3" -> "fd_16"
+"fd_16" -> "jd_17" [label="xyz: 3.55148e-18 -0.058 0 \nrpy: 1.5708 -0 -1.5708"]
+"jd_17" -> "f_17"
+"f_17" -> "jf_4" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_4" -> "fd_17"
+"fd_base_link" -> "jd_20" [label="xyz: 0 0 0.29 \nrpy: 0 -0 0"]
+"jd_20" -> "f_20"
+"f_20" -> "jf_5" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_5" -> "fd_20"
+"fd_20" -> "jd_21" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 0"]
+"jd_21" -> "f_21"
+"f_21" -> "j_13" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_13" -> "fd_21"
+"fd_21" -> "jd_22" [label="xyz: 0 0 -0.145 \nrpy: 1.5708 -0 1.5708"]
+"jd_22" -> "f_22"
+"f_22" -> "jf_6" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_6" -> "fd_22"
+"fd_22" -> "jd_23" [label="xyz: 0.32 0 0 \nrpy: 0 -0 0"]
+"jd_23" -> "f_23"
+"f_23" -> "jf_7" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_7" -> "fd_23"
+"fd_base_link" -> "jd_30" [label="xyz: 0 0 0.29 \nrpy: 0 -0 0"]
+"jd_30" -> "f_30"
+"f_30" -> "jf_8" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_8" -> "fd_30"
+"fd_30" -> "jd_31" [label="xyz: 0 0 0 \nrpy: -1.5708 -0 0"]
+"jd_31" -> "f_31"
+"f_31" -> "j_14" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"j_14" -> "fd_31"
+"fd_31" -> "jd_32" [label="xyz: 0 -0 -0.145 \nrpy: -1.5708 -0 -1.5708"]
+"jd_32" -> "f_32"
+"f_32" -> "jf_9" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_9" -> "fd_32"
+"fd_32" -> "jd_33" [label="xyz: 0.32 0 0 \nrpy: 0 -0 0"]
+"jd_33" -> "f_33"
+"f_33" -> "jf_10" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"jf_10" -> "fd_33"
+}
