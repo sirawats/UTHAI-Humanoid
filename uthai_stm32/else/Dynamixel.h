@@ -132,20 +132,20 @@
 class Dynamixel
 {
   private:
-    DigitalOut *dynamixelDi;
-    Serial *dynamixelSerial;
-    void transmitInstructionPacket(void);
-    unsigned int readStatusPacket(void);
-    // void debugframe(void);
-    // void debugStatusframe(void);
+	DigitalOut *dynamixelDi;
+	Serial *dynamixelSerial;
+	void transmitInstructionPacket(void);
+	unsigned int readStatusPacket(void);
+	void debugframe(void);
+	void debugStatusframe(void);
 
   public:
-    Dynamixel(PinName tx, PinName rx, int baud, PinName di);
-    ~Dynamixel(void);
+	Dynamixel(PinName tx, PinName rx, int baud, PinName di);
+	~Dynamixel(void);
 
-    // unsigned int reset(uint8_t ID);
-    unsigned int ping(uint8_t ID);
-    void setPosition(uint8_t ID, unsigned int Position, unsigned int Speed);
-    // unsigned int getPosition(uint8_t ID);
-    unsigned int getTemperature(uint8_t ID);
+	unsigned int reset(uint8_t ID);
+	unsigned int ping(uint8_t ID);
+	void setPosition(uint8_t ID, unsigned int Position, unsigned int Speed);
+	unsigned int getPosition(uint8_t ID);
+	unsigned int getTemperature(uint8_t ID);
 };

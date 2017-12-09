@@ -9,30 +9,38 @@ Timer timer;
 //-------------------------------------------------------------------------------------------------------------------------------
 //            Private Methods
 //-------------------------------------------------------------------------------------------------------------------------------
+void Dynamixel::debugframe(void)
+{
+}
+void Dynamixel::debugStatusframe(void)
+{
+}
 void Dynamixel::transmitInstructionPacket(void)
 {
     if (dynamixelSerial->readable())
         while (dynamixelSerial->readable())
             dynamixelSerial->getc();
 
+    uint8_t Counter = 0;
     dynamixelDi->write(1);
     dynamixelSerial->putc(HEADER);
     dynamixelSerial->putc(HEADER);
     dynamixelSerial->putc(Instruction_Packet[0]);
     dynamixelSerial->putc(Instruction_Packet[1]);
-    for (uint8_t i = 0; i < Instruction_Packet[1]; i++)
+    do
     {
-        dynamixelSerial->putc(Instruction_Packet[2 + i]);
-    }
-    wait_us((Instruction_Packet[1] + 4) * 5);
+        dynamixelSerial->putc(Instruction_Packet[Counter + 2]);
+        Counter++;
+    } while ((Instruction_Packet[1] - 2) >= Counter);
+    dynamixelSerial->putc(Instruction_Packet[Counter + 2]);
+    wait_us((Counter + 4) * 100);
     dynamixelDi->write(0);
 }
 
 unsigned int Dynamixel::readStatusPacket(void)
 {
-    wait_us(250);
     uint8_t Counter = 0;
-    uint8_t InBuff[20];
+    static uint8_t InBuff[20];
     uint8_t i = 0, j = 0, RxState = 0;
     Status_Packet[0] = 0;
     Status_Packet[1] = 0;
@@ -42,14 +50,6 @@ unsigned int Dynamixel::readStatusPacket(void)
     int bytes = 2;
     int timeout = 0;
     int plen = 0;
-    // while (timer.read_ms() < 3000)
-    // {
-    //     if (dynamixelSerial->readable())
-    //     {
-    //         InBuff[plen] = dynamixelSerial->getc();
-    //         plen++;
-    //     }
-    // }
     while ((timeout < ((6 + bytes) * 10000)) && (plen < (6 + bytes)))
     {
 
@@ -61,16 +61,14 @@ unsigned int Dynamixel::readStatusPacket(void)
         }
 
         // wait for the bit period
-        wait_us(1);
+        wait(1.0 / 1000000);
         timeout++;
     }
     timer.stop();
     for (int i = 0; i < plen; i++)
-    {
         Status_Packet[i] = InBuff[i];
-        printf("0x%X,", Status_Packet[i]);
-    }
-    printf("\r\n");
+    // printf("0x%X,", InBuff[i]);
+    // printf("\r\n");
     return 0x01;
 }
 //-------------------------------------------------------------------------------------------------------------------------------
@@ -90,6 +88,26 @@ Dynamixel::~Dynamixel(void)
         delete dynamixelSerial;
 }
 
+unsigned int Dynamixel::reset(uint8_t ID)
+{
+    Instruction_Packet[0] = ID;
+    Instruction_Packet[1] = RESET_LENGTH;
+    Instruction_Packet[2] = COMMAND_RESET;
+    Instruction_Packet[3] = ~(ID + RESET_LENGTH + COMMAND_RESET);
+
+    transmitInstructionPacket();
+    if (ID == 0xFE || Status_Return_Value != ALL)
+        return 0x00;
+    else
+    {
+        readStatusPacket();
+        if (Status_Packet[2] == 0)
+            return Status_Packet[0];
+        else
+            return Status_Packet[2] | 0xF000;
+    }
+}
+
 unsigned int Dynamixel::ping(uint8_t ID)
 {
     Instruction_Packet[0] = ID;
@@ -97,42 +115,19 @@ unsigned int Dynamixel::ping(uint8_t ID)
     Instruction_Packet[2] = COMMAND_PING;
     Instruction_Packet[3] = ~(ID + PING_LENGTH + COMMAND_PING);
     transmitInstructionPacket();
-    // if ((ID == 0xFE) || (Status_Return_Value != ALL))
-    //     return 0x00;
-    // else
-    // {
-    readStatusPacket();
-    return 0x01;
-    // if (Status_Packet[2] == 0)
-    // return (Status_Packet[0]);
-    // else
-    // return (Status_Packet[2] | 0xF000);
-    // }
-}
-unsigned int Dynamixel::getTemperature(uint8_t ID)
-{
-    Instruction_Packet[0] = ID;
-    Instruction_Packet[1] = READ_TEMP_LENGTH;
-    Instruction_Packet[2] = COMMAND_READ_DATA;
-    Instruction_Packet[3] = RAM_PRESENT_TEMPERATURE;
-    Instruction_Packet[4] = READ_ONE_BYTE_LENGTH;
-    Instruction_Packet[5] = ~(ID + READ_TEMP_LENGTH + COMMAND_READ_DATA + RAM_PRESENT_TEMPERATURE + READ_ONE_BYTE_LENGTH);
-
-    transmitInstructionPacket();
-    return readStatusPacket();
-    // return Instruction_Packet[5];
-    /*
-    if (Status_Packet[2] == 0)
-    { // If there is no status packet error return value
-        // return Status_Packet[3];
-        return 0;
-    }
+    if (ID == 0xFE || Status_Return_Value != ALL)
+        return 0x00;
     else
     {
-        return 1;
-        // return (Status_Packet[2] | 0xF000); // If there is a error Returns error value
-    }*/
+
+        readStatusPacket();
+        if (Status_Packet[2] == 0)
+            return (Status_Packet[0]);
+        else
+            return (Status_Packet[2] | 0xF000);
+    }
 }
+
 void Dynamixel::setPosition(uint8_t ID, unsigned int Position, unsigned int Speed = 0)
 {
     uint8_t L_Position = (uint8_t)(Position & 0xFF);
@@ -149,4 +144,53 @@ void Dynamixel::setPosition(uint8_t ID, unsigned int Position, unsigned int Spee
     Instruction_Packet[7] = H_Speed;
     Instruction_Packet[8] = ~(ID + SERVO_GOAL_LENGTH + COMMAND_WRITE_DATA + RAM_GOAL_POSITION_L + L_Position + H_Position + L_Speed + H_Speed);
     transmitInstructionPacket();
+}
+
+unsigned int Dynamixel::getPosition(uint8_t ID)
+{
+    Instruction_Packet[0] = ID;
+    Instruction_Packet[1] = READ_POS_LENGTH;
+    Instruction_Packet[2] = COMMAND_READ_DATA;
+    Instruction_Packet[3] = RAM_PRESENT_POSITION_L;
+    Instruction_Packet[4] = READ_TWO_BYTE_LENGTH;
+    Instruction_Packet[5] = ~(ID + READ_POS_LENGTH + COMMAND_READ_DATA + RAM_PRESENT_POSITION_L + READ_TWO_BYTE_LENGTH);
+    transmitInstructionPacket();
+    readStatusPacket();
+    // return 0;
+    if (Status_Packet[4] == 0)
+    { // If there is no status packet error return value                                          // If there is no status packet error return value
+        for (int i = 0; i < 8; i++)
+            printf("0x%X", Status_Packet[i]);
+        // printf("0x%X,", InBuff[i]);
+        return Status_Packet[5];
+        // return Status_Packet[5] << 8 | Status_Packet[6]; // Return present position value
+    }
+    // return 5;
+    else
+    {
+        return 4;
+        // return (Status_Packet[4] | 0xF000); // If there is a error Returns error value
+    }
+    // return 0;
+}
+
+unsigned int Dynamixel::getTemperature(uint8_t ID)
+{
+    Instruction_Packet[0] = ID;
+    Instruction_Packet[1] = READ_TEMP_LENGTH;
+    Instruction_Packet[2] = COMMAND_READ_DATA;
+    Instruction_Packet[3] = RAM_PRESENT_TEMPERATURE;
+    Instruction_Packet[4] = READ_ONE_BYTE_LENGTH;
+    Instruction_Packet[5] = ~(ID + READ_TEMP_LENGTH + COMMAND_READ_DATA + RAM_PRESENT_TEMPERATURE + READ_ONE_BYTE_LENGTH);
+    transmitInstructionPacket();
+    readStatusPacket();
+
+    if (Status_Packet[2] == 0)
+    { // If there is no status packet error return value
+        return Status_Packet[3];
+    }
+    else
+    {
+        return (Status_Packet[2] | 0xF000); // If there is a error Returns error value
+    }
 }
