@@ -1,0 +1,7 @@
+image: room2.png
+resolution: 1
+origin: [0.000000, -0.500000, 0.000000]
+negate: 0
+occupied_thresh: 0.4
+free_thresh: 0.1
+

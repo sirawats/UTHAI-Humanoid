@@ -1,0 +1,5 @@
+<launch>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find uthai_nav)/src/map/scale-room2.yaml"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find uthai_nav)/src/uthai_nav_setup.rviz"/>
+  <node name="footstep_planner" pkg="uthai_nav" type="Footstep_Planner_new.py" args="$(find uthai_nav)/src/Foot_right_cost_test2.ods" output="screen"/>
+</launch>

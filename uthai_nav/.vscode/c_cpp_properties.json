@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "/home/oeysk/uthai_ws/devel/include",
+                    "/opt/ros/kinetic/include",
+                    "/home/oeysk/uthai_ws/src/hrl_kinematics/include",
+                    "/home/oeysk/uthai_ws/src/kdl_parser/kdl_parser/include",
+                    "/usr/include"
+                ]
+            },
+            "includePath": [
+                "/home/oeysk/uthai_ws/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/oeysk/uthai_ws/src/hrl_kinematics/include",
+                "/home/oeysk/uthai_ws/src/kdl_parser/kdl_parser/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

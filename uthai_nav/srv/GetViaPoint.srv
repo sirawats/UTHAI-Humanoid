@@ -1,0 +1,3 @@
+# Get the Via Point as a geometry_msgs/PoseStamped
+---
+geometry_msgs/PoseStamped pose
