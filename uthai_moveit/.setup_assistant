@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: uthai_description
+    relative_path: urdf/uthai.urdf
+  SRDF:
+    relative_path: config/uthai.srdf
+  CONFIG:
+    author_name: oeyy.ey
+    author_email: oeyy.ey@gmail.com
+    generated_timestamp: 1525173619

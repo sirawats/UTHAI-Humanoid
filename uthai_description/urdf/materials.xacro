@@ -10,7 +10,7 @@
         <color rgba="0.0 0.8 0.0 1.0"/>
     </material>
     <material name="grey">
-        <color rgba="0.2 0.2 0.2 1.0"/>
+        <color rgba="0.6 0.6 0.6 1.0"/>
     </material>
     <material name="orange">
         <color rgba="${255/255} ${108/255} ${10/255} 1.0"/>

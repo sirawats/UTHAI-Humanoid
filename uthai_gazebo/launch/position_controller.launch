@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<launch>
+	<!-- Load joint controller configurations from YAML file to parameter server -->
+	<rosparam file="$(find uthai_gazebo)/config/position_controller.yaml" command="load"/>
+	<!-- load the controllers -->
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/uthai" args="joint_state_controller l_hip_yaw_position	l_hip_roll_position	l_hip_pitch_position l_knee_pitch_position l_ankle_pitch_position l_ankle_roll_position	r_hip_yaw_position r_hip_roll_position r_hip_pitch_position	r_knee_pitch_position r_ankle_pitch_position r_ankle_roll_position" />
+	<!-- convert joint states to TF transforms for rviz, etc -->
+	<!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen"><remap from="/joint_states" to="/uthai/joint_states" /></node> -->
+</launch>

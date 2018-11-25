@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="uthai">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="r_leg">
+        <link name="base_footprint" />
+        <link name="r_foot_ft_link" />
+        <joint name="r_hip_yaw_joint" />
+        <joint name="r_hip_roll_joint" />
+        <joint name="r_hip_pitch_joint" />
+        <joint name="r_knee_pitch_joint" />
+        <joint name="r_ankle_pitch_joint" />
+        <joint name="r_ankle_roll_joint" />
+        <chain base_link="base_footprint" tip_link="r_foot_ft_link" />
+    </group>
+    <group name="l_leg">
+        <link name="base_footprint" />
+        <link name="l_foot_ft_link" />
+        <joint name="l_hip_yaw_joint" />
+        <joint name="l_hip_roll_joint" />
+        <joint name="l_hip_pitch_joint" />
+        <joint name="l_knee_pitch_joint" />
+        <joint name="l_ankle_pitch_joint" />
+        <joint name="l_ankle_roll_joint" />
+        <chain base_link="base_footprint" tip_link="l_foot_ft_link" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="r_home" group="r_leg">
+        <joint name="r_ankle_pitch_joint" value="0" />
+        <joint name="r_ankle_roll_joint" value="0" />
+        <joint name="r_hip_pitch_joint" value="0" />
+        <joint name="r_hip_roll_joint" value="0" />
+        <joint name="r_hip_yaw_joint" value="0" />
+        <joint name="r_knee_pitch_joint" value="0" />
+    </group_state>
+    <group_state name="l_home" group="l_leg">
+        <joint name="l_ankle_pitch_joint" value="0" />
+        <joint name="l_ankle_roll_joint" value="0" />
+        <joint name="l_hip_pitch_joint" value="0" />
+        <joint name="l_hip_roll_joint" value="0" />
+        <joint name="l_hip_yaw_joint" value="0" />
+        <joint name="l_knee_pitch_joint" value="0" />
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="r_endf" parent_link="r_foot_ft_link" group="r_leg" />
+    <end_effector name="l_endf" parent_link="l_foot_ft_link" group="r_leg" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="r_leg_virtual" type="planar" parent_frame="world" child_link="r_foot_ft_link" />
+    <virtual_joint name="l_leg_virtual" type="planar" parent_frame="world" child_link="l_foot_ft_link" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_footprint" link2="l_hip_yaw_link" reason="Adjacent" />
+    <disable_collisions link1="base_footprint" link2="r_hip_yaw_link" reason="Adjacent" />
+    <disable_collisions link1="l_ankle_pitch_link" link2="l_ankle_roll_link" reason="Adjacent" />
+    <disable_collisions link1="l_ankle_pitch_link" link2="l_hip_pitch_link" reason="Never" />
+    <disable_collisions link1="l_ankle_pitch_link" link2="l_knee_pitch_link" reason="Adjacent" />
+    <disable_collisions link1="l_hip_pitch_link" link2="l_hip_roll_link" reason="Adjacent" />
+    <disable_collisions link1="l_hip_pitch_link" link2="l_knee_pitch_link" reason="Adjacent" />
+    <disable_collisions link1="l_hip_roll_link" link2="l_hip_yaw_link" reason="Adjacent" />
+    <disable_collisions link1="l_hip_roll_link" link2="l_knee_pitch_link" reason="Never" />
+    <disable_collisions link1="l_hip_roll_link" link2="r_hip_roll_link" reason="Never" />
+    <disable_collisions link1="l_hip_roll_link" link2="r_hip_yaw_link" reason="Never" />
+    <disable_collisions link1="l_hip_yaw_link" link2="l_knee_pitch_link" reason="Never" />
+    <disable_collisions link1="l_hip_yaw_link" link2="r_hip_roll_link" reason="Never" />
+    <disable_collisions link1="l_hip_yaw_link" link2="r_hip_yaw_link" reason="Never" />
+    <disable_collisions link1="r_ankle_pitch_link" link2="r_ankle_roll_link" reason="Adjacent" />
+    <disable_collisions link1="r_ankle_pitch_link" link2="r_hip_pitch_link" reason="Never" />
+    <disable_collisions link1="r_ankle_pitch_link" link2="r_knee_pitch_link" reason="Adjacent" />
+    <disable_collisions link1="r_hip_pitch_link" link2="r_hip_roll_link" reason="Adjacent" />
+    <disable_collisions link1="r_hip_pitch_link" link2="r_knee_pitch_link" reason="Adjacent" />
+    <disable_collisions link1="r_hip_roll_link" link2="r_hip_yaw_link" reason="Adjacent" />
+    <disable_collisions link1="r_hip_roll_link" link2="r_knee_pitch_link" reason="Never" />
+    <disable_collisions link1="r_hip_yaw_link" link2="r_knee_pitch_link" reason="Never" />
+</robot>

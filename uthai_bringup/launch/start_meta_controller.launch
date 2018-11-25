@@ -1,0 +1,11 @@
+<launch>
+    <node name="dynamixel_manager" pkg="dynamixel_controllers" type="controller_manager.py" required="true" output="screen">
+        <rosparam file="$(find uthai_bringup)/config/dxl_controller.yaml" command="load"/>
+    </node>
+    <!-- Start joint controller -->
+    <rosparam file="$(find uthai_bringup)/config/dxl.yaml" command="load"/>
+    <node name="dxl_controller_spawner" pkg="dynamixel_controllers" type="controller_spawner.py" args="--manager=dxl_manager --port dxl_port uthai/r_hip_yaw_position uthai/r_hip_roll_position uthai/r_hip_pitch_position uthai/r_knee_pitch_position uthai/r_ankle_pitch_position uthai/r_ankle_roll_position uthai/l_hip_yaw_position uthai/l_hip_roll_position uthai/l_hip_pitch_position uthai/l_knee_pitch_position uthai/l_ankle_pitch_position uthai/l_ankle_roll_position" output="screen"/>
+    <!-- Start joints trajectory controller controller -->
+    <rosparam file="$(find uthai_bringup)/config/joints_trajectory_controller.yaml" command="load"/>
+    <node name="controller_spawner_meta" pkg="dynamixel_controllers" type="controller_spawner.py" args="--manager=dxl_manager --type=meta                uthai_controller                uthai/r_hip_yaw_position uthai/r_hip_roll_position uthai/r_hip_pitch_position uthai/r_knee_pitch_position uthai/r_ankle_pitch_position uthai/r_ankle_roll_position uthai/l_hip_yaw_position uthai/l_hip_roll_position uthai/l_hip_pitch_position uthai/l_knee_pitch_position uthai/l_ankle_pitch_position uthai/l_ankle_roll_position" output="screen"/>
+</launch>

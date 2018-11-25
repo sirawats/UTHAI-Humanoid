@@ -1,0 +1,64 @@
+# joint_limits.yaml allows the dynamics properties specified in the URDF to be overwritten or augmented as needed
+# Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
+# Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
+joint_limits:
+  l_ankle_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_ankle_roll_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_hip_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_hip_roll_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_hip_yaw_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  l_knee_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_ankle_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_ankle_roll_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_hip_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_hip_roll_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_hip_yaw_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0
+  r_knee_pitch_joint:
+    has_velocity_limits: true
+    max_velocity: 3
+    has_acceleration_limits: false
+    max_acceleration: 0

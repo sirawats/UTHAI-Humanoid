@@ -1,0 +1,155 @@
+uthai/r_hip_yaw_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: r_hip_yaw
+    joint_speed: 0.2
+    motor:
+        id: 1
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/r_hip_roll_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: r_hip_roll
+    joint_speed: 0.2
+    motor:
+        id: 2
+        init: 2047
+        min: 0
+        max: 4095
+        
+uthai/r_hip_pitch_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: r_hip_pitch
+    joint_speed: 0.2
+    motor:
+        id: 3
+        init: 2047
+        min: 0
+        max: 4095
+                
+uthai/r_knee_pitch_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: r_knee_pitch
+    joint_speed: 0.2
+    motor:
+        id: 4
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/r_ankle_pitch_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: r_ankle_pitch
+    joint_speed: 0.2
+    motor:
+        id: 5
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/r_ankle_roll_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: r_ankle_roll
+    joint_speed: 0.2
+    motor:
+        id: 6
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/l_hip_yaw_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_hip_yaw
+    joint_speed: 0.2
+    motor:
+        id: 11
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/l_hip_roll_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_hip_roll
+    joint_speed: 0.2
+    motor:
+        id: 12
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/l_hip_pitch_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_hip_pitch
+    joint_speed: 0.2
+    motor:
+        id: 13
+        init: 2047
+        min: 0
+        max: 4095
+                
+uthai/l_knee_pitch_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_knee_pitch
+    joint_speed: 0.2
+    motor:
+        id: 14
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/l_ankle_pitch_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_ankle_pitch
+    joint_speed: 0.2
+    motor:
+        id: 15
+        init: 2047
+        min: 0
+        max: 4095
+
+uthai/l_ankle_roll_position:
+    controller:
+        package: dynamixel_controllers
+        module: joint_position_controller
+        type: JointPositionController
+    joint_name: l_ankle_roll
+    joint_speed: 0.2
+    motor:
+        id: 16
+        init: 2047
+        min: 0
+        max: 4095

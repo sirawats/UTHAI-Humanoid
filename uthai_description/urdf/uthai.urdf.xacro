@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot name="uthai" 
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="pi" value="3.141592654"/>
+    <!-- Import xacro file -->
+    <xacro:include filename="$(find uthai_description)/urdf/materials.xacro" />
+    <xacro:include filename="$(find uthai_description)/urdf/uthai.visuals.xacro" />
+    <xacro:include filename="$(find uthai_description)/urdf/uthai.inertia.xacro" />
+    <xacro:include filename="$(find uthai_description)/urdf/uthai.transmissions.xacro" />
+    <xacro:include filename="$(find uthai_description)/urdf/uthai.right_leg.xacro" />
+    <xacro:include filename="$(find uthai_description)/urdf/uthai.left_leg.xacro" />
+    <xacro:include filename="$(find uthai_description)/urdf/uthai.gazebo.xacro" />
+    <!-- Used for fixing robot -->
+    <!--<link name="world"></link> 
+    <joint name="world_fixed" type="fixed">
+        <origin xyz="0 0 0.764" rpy="0 0 0"/>
+        <parent link="world"/>
+        <child link="base_link"/>
+    </joint> -->
+    <link name="base_link"></link>
+    <joint name="base_fixed" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="base_footprint"/>
+    </joint>
+    <!-- base_link -->
+    <link name="base_footprint">
+        <visual>
+            <xacro:insert_mesh_base_link />
+        </visual>
+        <collision>
+            <xacro:insert_mesh_base_link />
+        </collision>
+        <inertial>
+            <xacro:insert_inertia_base_link />
+        </inertial>
+    </link>
+    <!-- imu joint -->
+    <joint name="imu_fixed" type="fixed">
+        <origin xyz="0.0 0 0.45" rpy="0 0 0"/>
+        <parent link="base_footprint"/>
+        <child link="imu_link"/>
+    </joint>
+    <link name="imu_link"></link>
+    <!-- leg link -->
+    <xacro:uthai_right_leg parent="base_footprint" dxl_effort="1000" dxl_speed="3"/>
+    <xacro:uthai_left_leg parent="base_footprint" dxl_effort="1000" dxl_speed="3"/>
+</robot>

@@ -1,0 +1,70 @@
+uthai:
+   # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100
+  
+  # Position Controllers ---------------------------------------
+  
+  # Left Leg -----
+  l_hip_yaw_position:
+    type: effort_controllers/JointPositionController
+    joint: l_hip_yaw_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  l_hip_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: l_hip_roll_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  l_hip_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: l_hip_pitch_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  l_knee_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: l_knee_pitch_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  l_ankle_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: l_ankle_pitch_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  l_ankle_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: l_ankle_roll_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  # Right Leg -----
+
+  r_hip_yaw_position:
+    type: effort_controllers/JointPositionController
+    joint: r_hip_yaw_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  r_hip_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: r_hip_roll_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  r_hip_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: r_hip_pitch_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  r_knee_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: r_knee_pitch_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  r_ankle_pitch_position:
+    type: effort_controllers/JointPositionController
+    joint: r_ankle_pitch_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}
+
+  r_ankle_roll_position:
+    type: effort_controllers/JointPositionController
+    joint: r_ankle_roll_joint
+    pid: {p: 200.0, i: 2.0, d: 0.0}

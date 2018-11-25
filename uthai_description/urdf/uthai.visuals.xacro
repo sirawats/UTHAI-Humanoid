@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<robot 
+    xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- body link -->
+    <xacro:macro name="insert_mesh_base_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/base.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- right hip yaw link -->
+    <xacro:macro name="insert_mesh_r_hip_yaw_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/r_hip_yaw.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- right hip roll link -->
+    <xacro:macro name="insert_mesh_r_hip_roll_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/r_hip_roll.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- right hip pitch link -->
+    <xacro:macro name="insert_mesh_r_hip_pitch_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/r_hip_pitch.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- right knee link -->
+    <xacro:macro name="insert_mesh_r_knee_pitch_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/r_knee_pitch.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- right ankle pitch link -->
+    <xacro:macro name="insert_mesh_r_ankle_pitch_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/r_ankle_pitch.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- right ankle roll link -->
+    <xacro:macro name="insert_mesh_r_ankle_roll_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/r_ankle_roll.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- left hip yaw link -->
+    <xacro:macro name="insert_mesh_l_hip_yaw_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/l_hip_yaw.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- left hip roll link -->
+    <xacro:macro name="insert_mesh_l_hip_roll_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/l_hip_roll.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- left hip pitch link -->
+    <xacro:macro name="insert_mesh_l_hip_pitch_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/l_hip_pitch.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- left knee pitch link -->
+    <xacro:macro name="insert_mesh_l_knee_pitch_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/l_knee_pitch.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- left ankle pitch link -->
+    <xacro:macro name="insert_mesh_l_ankle_pitch_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/l_ankle_pitch.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+    <!-- left ankle roll link -->
+    <xacro:macro name="insert_mesh_l_ankle_roll_link">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://uthai_description/meshes/l_ankle_roll.STL" scale="1 1 1" />
+        </geometry>
+        <material name="grey"/>
+    </xacro:macro>
+</robot>
