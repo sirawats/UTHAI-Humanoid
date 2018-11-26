@@ -27,9 +27,8 @@
     ```    
     ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/one.png?raw=true)
     ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/two.png?raw=true)
+    ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/three.png?raw=true)
+    ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/four.png?raw=true)
 
-    ![](https://github.com/UTHAI-Humanoid/UTHAI-Documents/blob/master/repo-images/uthai_gazebo_sim.png?raw=true)
-
-    ![](https://github.com/UTHAI-Humanoid/UTHAI-Documents/blob/master/repo-images/uthai_gazebo_sim.gif?raw=true)
 
     
