@@ -25,8 +25,8 @@
     source ~/uthai_ws/devel/setup.bash
     roslaunch uthai_simulation uthai_demo.launch
     ```    
-    ![](https://github.com/oeyyey/UTHAI-Humanoid/Tutorial/blob/master/one.png?raw=true)
-
+    ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/one.png?raw=true)
+    ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/two.png?raw=true)
 
     ![](https://github.com/UTHAI-Humanoid/UTHAI-Documents/blob/master/repo-images/uthai_gazebo_sim.png?raw=true)
 
