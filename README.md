@@ -14,7 +14,6 @@
     ```
     cd ~/uthai_ws/src
     git clone https://github.com/oeyyey/UTHAI-Humanoid.git
-    mv UTHAI-Humanoid src
     ```
 2. make.
     ```
@@ -26,6 +25,8 @@
     source ~/uthai_ws/devel/setup.bash
     roslaunch uthai_simulation uthai_demo.launch
     ```    
+    ![](https://github.com/oeyyey/UTHAI-Humanoid/Tutorial/blob/master/one.png?raw=true)
+
 
     ![](https://github.com/UTHAI-Humanoid/UTHAI-Documents/blob/master/repo-images/uthai_gazebo_sim.png?raw=true)
 
