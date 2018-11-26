@@ -1,4 +1,5 @@
 # UTHAI-Humanoid
+Static Walk of Humanoid Robot video
 [![Static Walk of Humanoid Robot](https://img.youtube.com/vi/JMVGSxT79rk/0.jpg)](https://www.youtube.com/watch?v=JMVGSxT79rk)
 
 ### Fast Startup Simulation (Kinetic-devel)
