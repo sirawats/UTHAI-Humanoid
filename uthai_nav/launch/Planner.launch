@@ -1,5 +1,8 @@
+<?xml version="1.0" ?>
 <launch>
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find uthai_nav)/src/map/room4.yaml"/>
+  <arg name="map_file" default="$(find uthai_nav)/src//map/room4.yaml"/>
+
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find uthai_nav)/src/uthai_nav_setup.rviz"/>
-  <node name="footstep_planner" pkg="uthai_nav" type="Footstep_Planner.py" args="$(find uthai_nav)/src/final_cost.ods" output="screen"/>
+  <node name="footstep_planner" pkg="uthai_nav" type="Footstep_Planner.py" args="$(find uthai_nav)/src/final_cost.ods"/>
 </launch>

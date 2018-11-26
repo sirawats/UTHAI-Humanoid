@@ -8,25 +8,9 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
-  <build_depend>moveit_core</build_depend>
-  <build_depend>moveit_kinematics</build_depend>
-  <build_depend>moveit_commander</build_depend>
-  <build_depend>moveit_msgs</build_depend>
-  <build_depend>moveit_ros_planning</build_depend>
-  <build_depend>moveit_ros_planning_interface</build_depend>
-  <build_depend>moveit_ros_move_group</build_depend>
-  <build_depend>hrl_kinematics</build_depend>
   <build_depend>kdl_parser</build_depend>
   <run_depend>roscpp</run_depend>
   <run_depend>rospy</run_depend>
-  <run_depend>moveit_core</run_depend>
-  <run_depend>moveit_kinematics</run_depend>
-  <run_depend>moveit_commander</run_depend>
-  <run_depend>moveit_msgs</run_depend>
-  <run_depend>moveit_ros_planning</run_depend>
-  <run_depend>moveit_ros_planning_interface</run_depend>
-  <run_depend>moveit_ros_move_group</run_depend>
-  <run_depend>hrl_kinematics</run_depend>
   <run_depend>kdl_pasrer</run_depend>
   <!-- The export tag contains other, unspecified, tags -->
   <export>

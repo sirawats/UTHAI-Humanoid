@@ -924,7 +924,9 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "kd_passion");
     ros::NodeHandle nh;
     ros::Rate rate(100); //30/100//80
-    uthai_kd uthai(&nh, "src/uthai_description/urdf/uthai.urdf", "base_link", "r_foot_ft_link", "l_foot_ft_link");
+    std::string urdf_file;
+    nh.getParam("urdf_file", urdf_file);
+    uthai_kd uthai(&nh,urdf_file , "base_link", "r_foot_ft_link", "l_foot_ft_link");
     KDL::ChainFkSolverPos_recursive r_fksolver(uthai.r_leg);
     KDL::ChainFkSolverPos_recursive l_fksolver(uthai.l_leg);
     // ros::Subscriber sub_path = nh.subscribe("uthai/footstep_path", 1000, get_path, &uthai, &r_fksolver, &l_fksolver);

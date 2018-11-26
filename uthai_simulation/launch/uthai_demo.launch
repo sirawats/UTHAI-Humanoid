@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<launch>
+  <include file="$(find uthai_nav)/launch/Planner.launch"/>
+  <include file="$(find uthai_gazebo)/launch/uthai_world.launch" />
+  <param name="urdf_file" value="$(find uthai_description)/urdf/uthai.urdf"/>
+  <node pkg="kdlo" name="kdlo" type="final_kd" output="screen" />
+</launch>
