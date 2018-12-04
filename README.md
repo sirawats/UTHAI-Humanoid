@@ -7,7 +7,8 @@ Static Walk of Humanoid Robot video
 
 0. install lib
     ```
-    sudo apt install liborocos-kdl1.3 ros-kinetic-effort-controllers ros-kinetic-position-controllers ros-kinetic-controller-*
+    sudo apt install liborocos-kdl1.3 ros-kinetic-effort-controllers ros-kinetic-position-controllers ros-kinetic-controller-
+    sudo pip install pyexcel_ods
     ```
 1. create workspace.
     ```
