@@ -31,13 +31,17 @@ Static Walk of Humanoid Robot video
     ```    
 ### Simulation 
 1.  Click Start
+
     ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/one.png?raw=true)
 2.  - Use 2D Pose Estimate for initial start point
     - Use 2D Nav goal for destination point
+    
     ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/two.png?raw=true)
 3.  Wait a while for path searching
+
     ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/three.png?raw=true)
 4.  Robot's going to start walking (slowly)
+
     ![](https://github.com/oeyyey/UTHAI-Humanoid/blob/master/Tutorial/four.png?raw=true)
 
 ### rqt_graph
