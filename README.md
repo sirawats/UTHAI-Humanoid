@@ -17,7 +17,7 @@ Static Walk of Humanoid Robot video
 1. clone UTHAI-Common repository.
     ```
     cd ~/uthai_ws/src
-    git clone https://github.com/oeyyey/UTHAI-Humanoid.git
+    git clone https://github.com/leossok/UTHAI-Humanoid.git
     ```
 2. make.
     ```
